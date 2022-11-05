@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="beforeSuite"  parallel="tests">
-    <test name="beforeSuites">
+    <test name="Emulator">
         <parameter name="deviceName" value="emulator-5554"></parameter>
         <parameter name="platformversion" value="11"></parameter>
         <parameter name="portNumber" value="4723"></parameter>
@@ -11,7 +11,7 @@
         </classes>
     </test>
 
-    <test name="beforeSuite2">
+    <test name="RealDevice">
         <parameter name="deviceName" value="28021JEGR16706"></parameter>
         <parameter name="platformversion" value="13"></parameter>
         <parameter name="portNumber" value="5723"></parameter>

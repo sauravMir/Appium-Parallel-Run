@@ -28,6 +28,7 @@ public class ioSampleTest {
       driver = BeforeSuites.tLocalDriver.get();
       wait = BeforeSuites.tLocalWait.get();
       System.out.println("setupTest");
+      System.out.println("Thread: "  + ": "+ Thread.currentThread().getName());
   }
 
 //    @BeforeSuite(alwaysRun = true)
@@ -59,6 +60,7 @@ public class ioSampleTest {
     @Test(priority = 1)
     public void click1stButton1() throws InterruptedException {
         System.out.println("click1stButton1");
+        System.out.println("Thread: "  + ": "+ Thread.currentThread().getName());
         wait.until(ExpectedConditions.visibilityOfElementLocated(firstButtonBy)).click();
         Thread.sleep(3000);
         contextSwitch(2);
@@ -73,6 +75,7 @@ public class ioSampleTest {
     @Test(priority = 2)
     public void click1stButton2() throws InterruptedException {
         System.out.println("click1stButton2");
+        System.out.println("Thread: bt2"  + ": "+ Thread.currentThread().getName());
         wait.until(ExpectedConditions.visibilityOfElementLocated(secondBy)).click();
         Thread.sleep(2000);
         contextSwitch(2);
@@ -86,6 +89,7 @@ public class ioSampleTest {
     @Test(priority = 3)
     public void click1stButton3() throws InterruptedException {
         System.out.println("click1stButton3");
+        System.out.println("Thread: bt3"  + ": "+ Thread.currentThread().getName());
         wait.until(ExpectedConditions.visibilityOfElementLocated(firstButtonBy)).click();
         Thread.sleep(2000);
         contextSwitch(2);

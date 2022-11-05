@@ -42,6 +42,7 @@ public class BeforeSuites {
     @Parameters({"deviceName", "platformversion", "portNumber"})
     public void setup(String deviceName, String platformversion, String portNumber) throws MalformedURLException {
         System.out.println("setup");
+        System.out.println("Thread: " + deviceName + ": "+ Thread.currentThread().getName());
         //instance = this;
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", deviceName);
