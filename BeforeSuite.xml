@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="beforeSuite"  parallel="tests">
+    <test name="beforeSuites">
+        <parameter name="deviceName" value="emulator-5554"></parameter>
+        <parameter name="platformversion" value="11"></parameter>
+        <parameter name="portNumber" value="4723"></parameter>
+        <classes>
+            <class name="BeforeSuites"></class>
+            <class name="ioSampleTest"/>
+            <class name="NewTest"/>
+        </classes>
+    </test>
+
+    <test name="beforeSuite2">
+        <parameter name="deviceName" value="28021JEGR16706"></parameter>
+        <parameter name="platformversion" value="13"></parameter>
+        <parameter name="portNumber" value="5723"></parameter>
+        <classes>
+            <class name="BeforeSuites"></class>
+            <class name="ioSampleTest"/>
+            <class name="NewTest"/>
+            <class name="AfterSuite"/>
+        </classes>
+    </test>
+</suite>

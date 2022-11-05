@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" parallel="instances">
+    <suite-files>
+        <suite-file path="BeforeSuite.xml">
+
+        </suite-file>
+        <suite-file path="Test2.xml">
+        </suite-file>
+        <suite-file path="TestNG.xml"/>
+        <suite-file path="AfterSuite.xml"/>
+    </suite-files>
+</suite>
