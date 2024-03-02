@@ -58,11 +58,12 @@ public class BeforeSuites {
         caps.setCapability("app", new File("/Users/test/Documents/AppiumTest/appium-sample-test-master/src/app-release.apk").getAbsolutePath());
         //caps.setCapability("noReset", "true");
         //caps.setCapability("fullReset",true);
-        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:"+portNumber+"/wd/hub"), caps);
+        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:"+portNumber), caps);
         wait = new WebDriverWait(driver, 10);
 
         setDriver(driver);
         setWait(wait);
+
     }
 
 

@@ -1,13 +1,6 @@
-import java.net.MalformedURLException;
-import java.time.Duration;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.connection.ConnectionState;
 import io.appium.java_client.android.connection.ConnectionStateBuilder;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
@@ -17,7 +10,12 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ioSampleTest {
     private AndroidDriver<MobileElement> driver;
@@ -67,7 +65,8 @@ public class ioSampleTest {
 
     @Test(priority = 1)
     public void click1stButton1() throws InterruptedException {
-        System.out.println("click1stButton1");
+        new OpenCVChecker().check(driver);
+        /*System.out.println("click1stButton1");
         System.out.println("Thread: "  + ": "+ Thread.currentThread().getName());
         driver.setConnection(new ConnectionStateBuilder().withWiFiDisabled().withDataDisabled().build());
        // driver.runAppInBackground(Duration.ofMillis(3000));
@@ -86,16 +85,16 @@ public class ioSampleTest {
         //driver.closeApp();
         driver.toggleWifi();
         pressWifi();
-       /* wait.until(ExpectedConditions.visibilityOfElementLocated(firstButtonBy)).click();
+       *//* wait.until(ExpectedConditions.visibilityOfElementLocated(firstButtonBy)).click();
         Thread.sleep(3000);
         contextSwitch(2);
         Thread.sleep(2000);
         System.out.println("Test1: " + driver.getCurrentUrl());
         contextSwitch(1);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(crossButtonBy)).click();*/
+        wait.until(ExpectedConditions.visibilityOfElementLocated(crossButtonBy)).click();*//*
 
         Thread.sleep(2000);
-        connectWifi();
+        connectWifi();*/
   }
 
     public void connectWifi() {
@@ -114,7 +113,7 @@ public class ioSampleTest {
 
     }
 
-
+/*
     @Test(priority = 2)
     public void click1stButton2() throws InterruptedException {
         System.out.println("click1stButton2");
@@ -141,7 +140,7 @@ public class ioSampleTest {
         contextSwitch(1);
         wait.until(ExpectedConditions.visibilityOfElementLocated(crossButtonBy)).click();
         Thread.sleep(2000);
-    }
+    }*/
 
     int index = 0;
 

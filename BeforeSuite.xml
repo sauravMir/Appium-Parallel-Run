@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="beforeSuite"  parallel="tests">
     <test name="Emulator">
-        <parameter name="deviceName" value="R5CR109P7FV"></parameter>
-        <parameter name="platformversion" value="11"></parameter>
+        <parameter name="deviceName" value="R3CW201NA6F"></parameter>
+        <parameter name="platformversion" value="14"></parameter>
         <parameter name="portNumber" value="4723"></parameter>
         <classes>
             <class name="BeforeSuites"></class>
