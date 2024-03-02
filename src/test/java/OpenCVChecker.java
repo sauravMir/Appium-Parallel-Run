@@ -4,7 +4,6 @@ import io.appium.java_client.imagecomparison.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
-import org.opencv.core.Core;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,59 +11,18 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static org.testng.Assert.assertNotNull;
-import static org.testng.AssertJUnit.assertTrue;
 
 public class OpenCVChecker {
-
-    static {
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-    }
+    String baseUrl = "/Users/test/Documents/AppiumTest/appium-sample-test-master/Appium-Parallel-Run/Images/";
 
     public void check(AndroidDriver<MobileElement> driver) {
 
         test(driver);
-       /* byte[] screenshot = Base64.encodeBase64(driver.getScreenshotAs(OutputType.BYTES));
-        byte[] screenshot2 = Base64.encodeBase64(driver.getScreenshotAs(OutputType.BYTES));
-        FeaturesMatchingOptions f = new FeaturesMatchingOptions()
-                .withDetectorName(FeatureDetector.ORB)
-                .withGoodMatchesFactor(40)
-                .withMatchFunc(MatchingFunction.BRUTE_FORCE_HAMMING)
-                .withEnabledVisualization();
-        FeaturesMatchingResult result = driver
-                .matchImagesFeatures(screenshot, screenshot2, f);
-
-        byte[] screenshot3 = Base64.encodeBase64(driver.getScreenshotAs(OutputType.BYTES));
-        driver.setSetting(Setting.FIX_IMAGE_FIND_SCREENSHOT_DIMENSIONS, true);
-        OccurrenceMatchingResult results = driver
-                .findImageOccurrence(screenshot3, screenshot3, new OccurrenceMatchingOptions()
-                        .withEnabledVisualization());
-        assertNotNull(results.getRect());
-
-
-        Assert.assertEquals(result.getVisualization().length, 10);
-        System.out.println("aasd");
-        //System.out.println("Welcome to OpenCV " + Core.VERSION);
-        Mat m = new Mat(5, 10, CvType.CV_8UC1, new Scalar(0));
-        //System.out.println("OpenCV Mat: " + m);
-        Mat mr1 = m.row(1);
-        mr1.setTo(new Scalar(1));
-        Mat mc5 = m.col(5);
-        mc5.setTo(new Scalar(5));
-        System.out.println("OpenCV Mat data:\n" + m.dump());*/
-
-//        assertThat(result.getVisualization().length, is(greaterThan(0)));
-//        assertThat(result.getCount(), is(greaterThan(0)));
-//        assertThat(result.getTotalCount(), is(greaterThan(0)));
-//        assertFalse(result.getPoints1().isEmpty());
-//        assertNotNull(result.getRect1());
-//        assertFalse(result.getPoints2().isEmpty());
-//        assertNotNull(result.getRect2());
-
     }
 
     public void test(AndroidDriver<MobileElement> driver) {
-        String baseImagePath="/Users/test/Documents/AppiumTest/appium-sample-test-master/Images/baseimage.png";
-        String screenshotPath="/Users/test/Documents/AppiumTest/appium-sample-test-master/Images/";
+        String baseImagePath= baseUrl + "baseimage.png";
+        String screenshotPath=baseUrl;
 
         File fileScreenShot = new File(screenshotPath);
 
@@ -90,7 +48,7 @@ public class OpenCVChecker {
 
             byte[] decodedBytes = Base64.decodeBase64(opImageData);
 
-            File opFile = new File("/Users/test/Documents/AppiumTest/appium-sample-test-master/Images/visual_result.png");
+            File opFile = new File(baseUrl + "visual_result.png");
 
             FileUtils.writeByteArrayToFile(opFile, decodedBytes);
 
